@@ -1,4 +1,4 @@
-@extends('auth.layouts')
+@extends('adminlte::page')
 
 @section('content')
 
