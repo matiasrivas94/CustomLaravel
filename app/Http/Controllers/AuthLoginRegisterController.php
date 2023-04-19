@@ -54,7 +54,7 @@ class AuthLoginRegisterController extends Controller
         Auth::attempt($credentials);
         $request->session()->regenerate();
         return redirect()->route('dashboard')
-        ->withSuccess('You have successfully registered & logged in!');
+        ->withSuccess('Te has registrado e iniciado sesión con éxito!');
     }
 
     /**
@@ -84,11 +84,11 @@ class AuthLoginRegisterController extends Controller
         {
             $request->session()->regenerate();
             return redirect()->route('dashboard')
-                ->withSuccess('You have successfully logged in!');
+                ->withSuccess('Has iniciado sesión correctamente!');
         }
 
         return back()->withErrors([
-            'email' => 'Your provided credentials do not match in our records.',
+            'email' => 'Sus credenciales proporcionadas no coinciden en nuestros registros.',
         ])->onlyInput('email');
 
     } 
@@ -107,7 +107,7 @@ class AuthLoginRegisterController extends Controller
         
         return redirect()->route('login')
             ->withErrors([
-            'email' => 'Please login to access the dashboard.',
+            'email' => 'Inicie sesión para acceder.',
         ])->onlyInput('email');
     } 
     
@@ -123,6 +123,6 @@ class AuthLoginRegisterController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect()->route('login')
-            ->withSuccess('You have logged out successfully!');;
+            ->withSuccess('Ha cerrado sesión con éxito!');;
     }    
 }
