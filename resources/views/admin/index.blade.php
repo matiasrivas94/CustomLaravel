@@ -8,6 +8,7 @@
 
 @section('content')
     <p>Welcome to this beautiful admin panel.</p>
+    <h1>BLOCK</h1>
 @stop
 
 @section('css')
