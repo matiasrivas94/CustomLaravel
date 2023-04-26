@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => '',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,8 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Mis Proyectos</b>',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -150,8 +149,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
@@ -194,7 +193,7 @@ return [
     'classes_content' => '',
     'classes_sidebar' => 'sidebar-dark-primary elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-info navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -211,14 +210,14 @@ return [
     */
 
     'sidebar_mini' => 'lg',
-    'sidebar_collapse' => false,
+    'sidebar_collapse' => true,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
     'sidebar_collapse_remember_no_transition' => true,
     'sidebar_scrollbar_theme' => 'os-theme-light',
     'sidebar_scrollbar_auto_hide' => 'l',
     'sidebar_nav_accordion' => true,
-    'sidebar_nav_animation_speed' => 300,
+    'sidebar_nav_animation_speed' => 200,
 
     /*
     |--------------------------------------------------------------------------
@@ -253,7 +252,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => false,
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -292,33 +291,51 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
-        ],
-        [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
 
         // Sidebar items:
+        /*
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
+            'text'        => 'Laravel 10 - Vue 3js',
+            'url'         => '#',
+            'icon'        => 'fas fa-home',
+            'icon_color'  => 'blue'
+        ],*/
+
+        ['header' => 'Laravel 10'],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text'          => 'Laravel',
+            'url'           => '#',
+            'icon'          => 'fab fa-laravel',
+            'icon_color'    => 'red',
+            'submenu'       => [
+                [
+                    'text'          => 'BLOG',
+                    'url'           => '#',
+                    'icon'          => 'far fa-sticky-note',
+                    'icon_color'    => 'white',
+                ],
+            ]
         ],
+
+        ['header' => 'Vue 3'],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'          => 'Vuejs',
+            'url'           => '#',
+            'icon'          => 'fab fa-vuejs',
+            'icon_color'    => 'green',
+            'submenu'       => [
+                [
+                    'text'          => 'CRUD',
+                    'url'           => '#',
+                    'icon'          => '',
+                    'icon_color'    => 'white',
+                ],
+            ],
         ],
-        ['header' => 'account_settings'],
+        /*
         [
             'text' => 'profile',
             'url'  => 'admin/settings',
@@ -383,6 +400,7 @@ return [
             'icon_color' => 'cyan',
             'url'        => '#',
         ],
+        */
     ],
 
     /*
