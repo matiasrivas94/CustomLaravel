@@ -20,7 +20,8 @@ class PostSeederTableSeeder extends Seeder
     public function run()
     {
         //Crea la carpeta segun en donde especifique la url, Model Image
-        Storage::makeDirectory('posts');
+        Storage::deleteDirectory('public/posts');
+        Storage::makeDirectory('public/posts');
 
         Category::factory()->count(3)->create();
         Tag::factory()->count(6)->create();
