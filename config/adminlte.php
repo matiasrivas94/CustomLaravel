@@ -296,23 +296,30 @@ return [
         ],
 
         // Sidebar items:
-        /*
+        
         [
             'text'        => 'Laravel 10 - Vue 3js',
             'url'         => '#',
             'icon'        => 'fas fa-home',
             'icon_color'  => 'blue'
-        ],*/
+        ],
 
         ['header' => 'Laravel 10'],
         [
-            'text'          => 'Laravel',
-            'url'           => '#',
+            'text'          => 'BLOG',
             'icon'          => 'fab fa-laravel',
             'icon_color'    => 'red',
             'submenu'       => [
                 [
-                    'text'          => 'BLOG',
+                    'text'          => 'Posts',
+                    'route'         => 'blg.posts.index',
+                    'active'        => ['blog/posts*'],
+                    //'can'           =>  'blog.admin.posts', //PERMISOS
+                    'icon'          => 'far fa-sticky-note',
+                    'icon_color'    => 'white',
+                ],
+                [
+                    'text'          => 'Category',
                     'url'           => '#',
                     'icon'          => 'far fa-sticky-note',
                     'icon_color'    => 'white',
@@ -323,7 +330,6 @@ return [
         ['header' => 'Vue 3'],
         [
             'text'          => 'Vuejs',
-            'url'           => '#',
             'icon'          => 'fab fa-vuejs',
             'icon_color'    => 'green',
             'submenu'       => [
