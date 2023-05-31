@@ -8,6 +8,11 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    
+  ],
+  corePlugins: {
+    container: false,
+}
 }
 
