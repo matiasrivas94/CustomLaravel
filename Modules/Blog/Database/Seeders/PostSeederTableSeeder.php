@@ -40,3 +40,4 @@ class PostSeederTableSeeder extends Seeder
         }
     }
 }
+//php artisan db:seed --class=Modules\\Blog\\Database\\Seeders\\PostSeederTableSeeder

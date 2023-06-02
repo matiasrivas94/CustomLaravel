@@ -14,7 +14,6 @@ class PostController extends Controller
     {
         
         //$this->middleware('auth');
-
         //$this->middleware('can:blg.posts.index')->only('index');
     }
 
@@ -24,9 +23,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::where('state',2)->get();
+        $posts = Post::where('state',2)->paginate(10);
         return view ('blog::posts.index',[
-            'posts' => $post,
+            'posts' => $posts,
         ]);
     }
 }

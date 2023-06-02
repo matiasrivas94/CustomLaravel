@@ -2,8 +2,13 @@
 
 @section('title', 'Laravel')
 
+@section('css')
+<link rel="stylesheet" href="{{mix('resources/css/app.css')}}">
+@stop
+
+
 @section('content_header')
-    <h1>MIS PROYECTOS REALIZADOS</h1>
+    <h1 class="text-3xl font-bold underline" >MIS PROYECTOS REALIZADOS</h1>
 @stop
 
 @section('content')

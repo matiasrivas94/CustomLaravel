@@ -4,6 +4,7 @@ namespace Modules\Blog\Entities;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Blog\Entities\Post;
 
 class Tag extends Model
 {
@@ -12,6 +13,7 @@ class Tag extends Model
     protected $fillable = [
         'name',
         'slug',
+        'color'
     ];
 
     //-------------------------------------RELATIONS-------------------------------------//

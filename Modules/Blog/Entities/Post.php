@@ -5,6 +5,7 @@ namespace Modules\Blog\Entities;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Blog\Entities\Tag;
 
 class Post extends Model
 {
