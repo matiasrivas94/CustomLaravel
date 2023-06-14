@@ -28,4 +28,25 @@ class PostController extends Controller
             'posts' => $posts,
         ]);
     }
+
+    /**
+     * @return Renderable
+     */
+    public function show(Post $post)
+    {
+        // $postsimilares = Post::where('category_id', $post->category_id)
+        //                             ->where('state',2)  //Post publicados
+        //                             ->latest('id')      //Ordenados descendente
+        //                             ->take(4)           //Cantidad solicitada
+        //                             ->get();
+        //return view ('blog::posts.show', compact('post','postsimilares'));
+                                    
+        $post->loadMissing('category', 'tags', 'image');
+        return view('blog::posts.show', [
+            'post'          =>  $post
+        ]);
+
+        
+    }
+
 }

@@ -38,6 +38,10 @@ class PostSeederTableSeeder extends Seeder
                 
             ]);
         }
+        $post->tags()->attach([
+            rand(1,4),
+            rand(5,8)
+        ]);
     }
 }
 //php artisan db:seed --class=Modules\\Blog\\Database\\Seeders\\PostSeederTableSeeder

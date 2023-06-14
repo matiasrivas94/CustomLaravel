@@ -18,7 +18,7 @@
         @foreach ($posts as $post )
             {{-- <article class="w-full bg-center bg-cover h-80" sytle="background-image: url({{ Storage::url($post->image->url)}})"> --}}
             <article class="w-full bg-center bg-cover h-80">
-                <div class="flex flex-col justify-center w-full h-full px-8">
+                <div class="flex flex-col justify-center bg-red px-8">
 
                     {{-- <div>
                         @foreach ($post->tags as tag)
@@ -29,9 +29,10 @@
                     </div> --}}
 
                     <h1 class="leading-8 text-white text-4x1 font-blod">
-                        <a href="">
+                        <a href="{{ route('blg.posts.show', $post->id) }}">
                             {{$post->name}}
-                            {{$post->tags}}
+                            {{$post->category->name}}
+                            
                         </a>
                     </h1>
 
