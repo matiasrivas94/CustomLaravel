@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'blog','as' => 'blg.'], function () {
     Route::get('posts', [\Modules\Blog\Http\Controllers\PostController::class, 'index'])->name('posts.index');
     Route::get('posts/{post}', [\Modules\Blog\Http\Controllers\PostController::class, 'show'])->name('posts.show');
+
+    Route::get('category/{category}', [\Modules\Blog\Http\Controllers\PostController::class, 'category'])->name('posts.category');
 });

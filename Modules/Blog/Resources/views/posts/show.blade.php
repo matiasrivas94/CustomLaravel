@@ -36,9 +36,11 @@
             <ul>
                 @foreach($post as $p)
                     <li class="mb-4">
-                        <span class="ml-2 text-gray-600">   Nombre:{{$post->category->name}}</span>
-                        <br>
-                        <span class="ml-2 text-gray-500">   Slug:{{$post->category->slug}}</span>
+                        <a href="{{ route('blg.posts.category', $post->id) }}">
+                            <span class="ml-2 text-gray-600">   Nombre:{{$post->category->name}}</span>
+                            <br>
+                            <span class="ml-2 text-gray-500">   Slug:{{$post->category->slug}}</span>
+                        </a>
                     </li>
 
                 @endforeach

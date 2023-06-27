@@ -32,7 +32,6 @@
                         <a href="{{ route('blg.posts.show', $post->id) }}">
                             {{$post->name}}
                             {{$post->category->name}}
-                            
                         </a>
                     </h1>
 
