@@ -298,7 +298,7 @@ return [
         // Sidebar items:
         
         [
-            'text'        => 'Laravel 10 - Vue 3js',
+            'text'        => 'PRINCIPAL',
             'url'         => 'admin',
             'icon'        => 'fas fa-home',
             'icon_color'  => 'blue'

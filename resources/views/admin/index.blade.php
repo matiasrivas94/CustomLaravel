@@ -12,7 +12,12 @@
 @stop
 
 @section('content')
-    <p>a futuro: una guia explicando para proyecto y en que se realizo</p>
+    <h1>PRIMER PROYECTO:</h1>
+    <h3>
+        <i class="fab fa-laravel text-gray-900">Sistema de blog autoadministrable en Laravel 10</i>
+        <i class="fab fa-laravel"></i>
+    </h3>
+        
 @stop
 
 @section('css')
