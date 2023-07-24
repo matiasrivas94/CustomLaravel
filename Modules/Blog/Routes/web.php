@@ -17,4 +17,6 @@ Route::group(['prefix' => 'blog','as' => 'blg.'], function () {
     Route::get('posts/{post}', [\Modules\Blog\Http\Controllers\PostController::class, 'show'])->name('posts.show');
 
     Route::get('category/{category}', [\Modules\Blog\Http\Controllers\PostController::class, 'category'])->name('posts.category');
+
+    Route::get('tag/{tag}', [\Modules\Blog\Http\Controllers\PostController::class, 'tag'])->name('posts.tag');
 });

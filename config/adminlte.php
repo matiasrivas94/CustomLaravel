@@ -317,13 +317,7 @@ return [
                     //'can'           =>  'blog.admin.posts', //PERMISOS
                     'icon'          => 'far fa-sticky-note',
                     'icon_color'    => 'white',
-                ],
-                [
-                    'text'          => 'Category',
-                    'url'           => '#',
-                    'icon'          => 'far fa-sticky-note',
-                    'icon_color'    => 'white',
-                ],
+                ]
             ]
         ],
 

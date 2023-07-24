@@ -42,6 +42,13 @@
                             <span class="ml-2 text-gray-500">   Slug:{{$post->category->slug}}</span>
                         </a>
                     </li>
+                    <div class="px-6 pt-4 pb-2">
+                        @foreach($post->tags as $tag)
+                            <a href="{{route('blg.posts.tag', $tag)}}" class="inline-block h-6 px-3 bg-{{$tag->color}}-600 text-blue rounded">
+                                TAG
+                            </a>
+                        @endforeach
+                    </div>
 
                 @endforeach
             </ul>

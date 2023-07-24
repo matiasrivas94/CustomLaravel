@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Blog\Entities\Category;
 use Modules\Blog\Entities\Post;
+use Modules\Blog\Entities\Tag;
 
 class PostController extends Controller
 {
@@ -56,6 +57,13 @@ class PostController extends Controller
                                     ->paginate(6);
                                     
         return view ('blog::posts.category', compact('posts','category'));
+    }
+
+    public function tag(Tag $tag){
+
+        $posts = $tag->post()->where('state',2)->latest('id')->paginate(4);
+                
+        return view ('blog::posts.tag', compact('posts','tag'));
     }
 
 }
