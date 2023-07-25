@@ -3,7 +3,6 @@
 namespace Modules\Blog\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Blog\Entities\Category;
 use Modules\Blog\Entities\Post;

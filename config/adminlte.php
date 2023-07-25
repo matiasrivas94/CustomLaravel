@@ -317,7 +317,15 @@ return [
                     //'can'           =>  'blog.admin.posts', //PERMISOS
                     'icon'          => 'far fa-sticky-note',
                     'icon_color'    => 'white',
-                ]
+                ],
+                [
+                    'text'          => 'Categories',
+                    'route'         => 'blg.categories.index',
+                    'active'        => ['blog/categories*'],
+                    //'can'           =>  'blog.admin.categories', //PERMISOS
+                    'icon'          => 'fab fa-fw fa-buffer',
+                    'icon_color'    => 'white',
+                ],
             ]
         ],
 

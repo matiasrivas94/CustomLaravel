@@ -7,7 +7,7 @@
 @stop
 
 @section('content_header')
-    <h1>POSTS</h1>
+    <h1>LISTA DE POSTS</h1>
 @stop
 
 @section('content')
