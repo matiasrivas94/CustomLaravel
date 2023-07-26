@@ -28,10 +28,21 @@ class CategoryController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * @param Request $request
+     * @return Renderable
      */
     public function store(Request $request)
     {
-        //
+       
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:categories'
+        ]);
+        
+        Category::create($request->all());
+       
+        return redirect()->route('blg::categories.index')
+            ->with('success', 'Categoria Creada Exitosamente.');
     }
 
     /**
@@ -55,7 +66,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:categories'
+        ]);
+
+        $category->update($request->all());
+        return redirect()->route('blog::categories.show', $category)
+            ->with('success', 'Categoria correctamente actualizado.');
     }
 
     /**
@@ -63,6 +81,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect()->route('blg::categories.index');
     }
 }

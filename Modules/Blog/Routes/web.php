@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'blog','as' => 'blg.'], function () {
+Route::group(['prefix' => 'blog', 'as' => 'blg.'], function () {
     //RUTAS DE POSTS
     Route::get('posts', [\Modules\Blog\Http\Controllers\PostController::class, 'index'])->name('posts.index');
     Route::get('posts/{post}', [\Modules\Blog\Http\Controllers\PostController::class, 'show'])->name('posts.show');
@@ -21,9 +21,10 @@ Route::group(['prefix' => 'blog','as' => 'blg.'], function () {
 
     //RUTAS DE CATEGORIES
     Route::get('categories', [\Modules\Blog\Http\Controllers\CategoryController::class, 'index'])->name('categories.index');
+    Route::post('categories', [\Modules\Blog\Http\Controllers\CategoryController::class, 'store'])->name('categories.store');
     Route::get('categories/create', [\Modules\Blog\Http\Controllers\CategoryController::class, 'create'])->name('categories.create');
-    Route::get('categories/edit', [\Modules\Blog\Http\Controllers\CategoryController::class, 'edit'])->name('categories.edit');
-    Route::get('categories/{category}', [\Modules\Blog\Http\Controllers\CategoryController::class, 'category'])->name('categories.destroy');
-   ;
+    Route::put('categories/{category}', [\Modules\Blog\Http\Controllers\CategoryController::class, 'update'])->name('categories.update');
+    Route::delete('categories/{category}', [\Modules\Blog\Http\Controllers\CategoryController::class, 'destroy'])->name('categories.destroy');
+    Route::get('categories/{category}/edit', [\Modules\Blog\Http\Controllers\CategoryController::class, 'edit'])->name('categories.edit');
 });
 
