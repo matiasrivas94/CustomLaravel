@@ -33,16 +33,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-       
         $request->validate([
             'name' => 'required',
-            'slug' => 'required|unique:categories'
+            'slug' => 'required'
         ]);
-        
-        Category::create($request->all());
+
+        $data = Category::create($request->all());
        
-        return redirect()->route('blg::categories.index')
-            ->with('success', 'Categoria Creada Exitosamente.');
+        return redirect()->route('blg.categories.index',$data)
+            ->with('success', 'Categoría Creada Exitosamente.');
     }
 
     /**
@@ -83,6 +82,7 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('blg::categories.index');
+        return redirect()->route('blg::categories.index')
+                ->with('success', 'Categoria Eliminada.');;
     }
 }

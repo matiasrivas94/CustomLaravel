@@ -326,6 +326,14 @@ return [
                     'icon'          => 'fab fa-fw fa-buffer',
                     'icon_color'    => 'white',
                 ],
+                [
+                    'text'          => 'Tags',
+                    'route'         => 'blg.tags.index',
+                    'active'        => ['blog/tags*'],
+                    //'can'           =>  'blog.admin.tags', //PERMISOS
+                    'icon'          => 'fas fa-tag',
+                    'icon_color'    => 'white',
+                ]
             ]
         ],
 
