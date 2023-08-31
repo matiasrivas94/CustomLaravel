@@ -16,9 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'blog', 'as' => 'blg.'], function () {
     //RUTAS DE POSTS
     Route::get('posts', [\Modules\Blog\Http\Controllers\PostController::class, 'index'])->name('posts.index');
+    Route::get('posts/create', [\Modules\Blog\Http\Controllers\PostController::class, 'create'])->name('posts.create');
     Route::get('posts/{post}', [\Modules\Blog\Http\Controllers\PostController::class, 'show'])->name('posts.show');
     Route::get('category/{category}', [\Modules\Blog\Http\Controllers\PostController::class, 'category'])->name('posts.category');
     Route::get('tag/{tag}', [\Modules\Blog\Http\Controllers\PostController::class, 'tag'])->name('posts.tag');
+    //Route::resource('/posts', 'PostController');
 
     //RUTAS DE CATEGORIES
     // Route::get('categories', [\Modules\Blog\Http\Controllers\CategoryController::class, 'index'])->name('categories.index');

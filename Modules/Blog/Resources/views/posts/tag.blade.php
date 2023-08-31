@@ -8,7 +8,7 @@
 
 @section('content_header')
     <div class="py-8">
-        <h1 class="uppercase text-center text-3xl font-bold">TAGS: {{$tag->name}} </h1>
+        <h1 class="text-3xl font-bold text-center uppercase">TAGS: {{$tag->name}} </h1>
     </div>
 @stop
 
@@ -24,9 +24,6 @@
 
        </div>
 
-        <div class="mt-4">
-            {{ $posts->links() }}
-        </div>
 
    </div>
 @stop

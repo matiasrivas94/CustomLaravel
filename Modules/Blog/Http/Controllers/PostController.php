@@ -3,10 +3,12 @@
 namespace Modules\Blog\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Blog\Entities\Category;
 use Modules\Blog\Entities\Post;
 use Modules\Blog\Entities\Tag;
+use Modules\Blog\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
@@ -47,6 +49,34 @@ class PostController extends Controller
         //     'post'          =>  $post
         // ]);
     }
+
+      /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $category = Category::orderBy('name')->get();
+
+        return view('blog::posts.create', [
+            'categorias' => $category
+        ]);
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     * @param Request $request
+     * @return Renderable
+     */
+    public function store(PostRequest $request)
+    {
+        $data = array_merge($request->validated());
+
+        Post::create($data);
+        return redirect()->route('blg.posts.index')
+            ->with('success', 'Post Creado Exitosamente.');
+    }
+
 
     public function category(Category $category){
 
