@@ -16,7 +16,7 @@
     <div class="card">
         <div class="card-body">
             
-            <form action="{{ route('blg.categories.update',$category) }}" method="POST" autocomplete="off">  
+            <form action="{{ route('blg.categories.update',$category) }}" method="PUT" autocomplete="off">  
                 @csrf
                 @method('put')
 

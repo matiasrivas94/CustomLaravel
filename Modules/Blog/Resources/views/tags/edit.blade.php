@@ -12,7 +12,7 @@
     <div class="card">
         <div class="card-body">
             
-            <form action="{{ route('blg.tags.update',$tag->id) }}" method="POST" autocomplete="off">  
+            <form action="{{ route('blg.tags.update',$tag->id) }}" method="PUT" autocomplete="off">  
                 @csrf
                 @method('put')
 

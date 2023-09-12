@@ -95,4 +95,30 @@ class PostController extends Controller
         return view ('blog::posts.tag', compact('posts','tag'));
     }
 
+       /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Post $post)
+    {
+        $categories = Category::pluck('name','id');
+        $tag = Tag::all();
+
+        return view ('blog::post.edit', compact('post','categories','tags'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(PostRequest $request, Post $post)
+    {
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:categories'
+        ]);
+
+        $post->update($request->all());
+        return redirect()->route('blog::posts.show', $post)
+            ->with('success', 'POST correctamente actualizado.');
+    }
+
 }
