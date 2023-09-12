@@ -21,9 +21,9 @@
                 @method('put')
 
                 <div class="from-group">
-                    <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre:<strong>*</strong></label>
-                    <input type="text" name="nombre" id="nombre" maxlength="120" minlength="4" required
-                            value="{{  old('nombre') ?? ($category ? $category->nombre: '') }}" placeholder="Ingrese un Nombre"
+                    <label for="name" class="block text-sm font-medium text-gray-700">Nombre:<strong>*</strong></label>
+                    <input type="text" name="name" id="nombre" maxlength="120" minlength="4" required
+                            value="{{  old('name') ?? ($category ? $category->name: '') }}" placeholder="Ingrese un Nombre"
                          class="form-control">
 
                     @error('nombre')
@@ -34,7 +34,7 @@
                 <div class="from-group">
                     <label for="slug" class="block text-sm font-medium text-gray-700">Slug:<strong>*</strong></label>
                     <input type="text" name="slug" id="slug" maxlength="120" minlength="4" required
-                        value="{{  old('nombre') ?? ($category ? $category->slug: '') }}" placeholder="Ingrese el Slug"
+                        value="{{  old('slug') ?? ($category ? $category->slug: '') }}" placeholder="Ingrese el Slug"
                         class="form-control">
 
                     @error('slug')

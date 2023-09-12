@@ -22,7 +22,7 @@
                     <div class="from-group">
                         <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre:<strong>*</strong></label>
                         <input type="text" name="nombre" id="nombre" maxlength="120" minlength="4" required
-                            value="{{ old('nombre') }}" placeholder="Ingrese un Nombre"
+                            value="{{ old('name') }}" placeholder="Ingrese un Nombre"
                             class="form-control">
 
                         @error('nombre')

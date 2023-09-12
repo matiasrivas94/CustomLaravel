@@ -14,8 +14,8 @@
     <div class="card">   
 
     <div class="card-header">
-        <a class="btn btn-success">Crear Post</a>
-        {{-- <a href="{{ route('blg.posts.create') }}" class="btn btn-success">Crear Post</a> --}}
+        {{-- <a class="btn btn-success">Crear Post</a> --}}
+        <a href="{{ route('blg.posts.create') }}" class="btn btn-success">Crear Post</a>
     </div>
     
     <div class="card-body">

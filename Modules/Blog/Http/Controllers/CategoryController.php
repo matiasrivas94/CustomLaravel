@@ -82,7 +82,7 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('blg::categories.index')
+        return redirect()->route('blog::categories.index')
                 ->with('success', 'Categoria Eliminada.');;
     }
 }
