@@ -33,7 +33,7 @@
                     <tr>
                         <td>{{ $post->id }}</td>
                         <td>{{ $post->name }}</td>
-                        <td>{{$post->category->name ?? 'Sin Asignar'}}</td>
+                        <td>{{$post->category->name ?? 'SIN ASIGNAR'}}</td>
 
                         <!--BOTONES-->
                         <td width="10px">
