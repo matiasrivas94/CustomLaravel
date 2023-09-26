@@ -191,7 +191,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-info elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-info navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -296,34 +296,50 @@ return [
         ],
 
         // Sidebar items:
-        /*
+        
         [
-            'text'        => 'Laravel 10 - Vue 3js',
-            'url'         => '#',
+            'text'        => 'PRINCIPAL',
+            'url'         => 'admin',
             'icon'        => 'fas fa-home',
             'icon_color'  => 'blue'
-        ],*/
+        ],
 
         ['header' => 'Laravel 10'],
         [
-            'text'          => 'Laravel',
-            'url'           => '#',
+            'text'          => 'BLOG',
             'icon'          => 'fab fa-laravel',
             'icon_color'    => 'red',
             'submenu'       => [
                 [
-                    'text'          => 'BLOG',
-                    'url'           => '#',
+                    'text'          => 'Posts',
+                    'route'         => 'blg.posts.index',
+                    'active'        => ['blog/posts*'],
+                    //'can'           =>  'blog.admin.posts', //PERMISOS
                     'icon'          => 'far fa-sticky-note',
                     'icon_color'    => 'white',
                 ],
+                [
+                    'text'          => 'Categories',
+                    'route'         => 'blg.categories.index',
+                    'active'        => ['blog/categories*'],
+                    //'can'           =>  'blog.admin.categories', //PERMISOS
+                    'icon'          => 'fab fa-fw fa-buffer',
+                    'icon_color'    => 'white',
+                ],
+                [
+                    'text'          => 'Tags',
+                    'route'         => 'blg.tags.index',
+                    'active'        => ['blog/tags*'],
+                    //'can'           =>  'blog.admin.tags', //PERMISOS
+                    'icon'          => 'fas fa-tag',
+                    'icon_color'    => 'white',
+                ]
             ]
         ],
 
         ['header' => 'Vue 3'],
         [
             'text'          => 'Vuejs',
-            'url'           => '#',
             'icon'          => 'fab fa-vuejs',
             'icon_color'    => 'green',
             'submenu'       => [
