@@ -32,7 +32,8 @@ class TagController extends Controller
             'pink' => 'Color rosado',
             'green' => 'Color verde'
         ];
-        return view('blog::tags.create', compact($colors));
+        //return view('blog::tags.create', compact($colors));
+        return view('blog::tags.create');
     }
 
     /**

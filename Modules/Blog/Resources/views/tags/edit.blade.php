@@ -39,15 +39,12 @@
                 </div>
 
                 <div class="from-group">
-                    {{-- <label for="color" class="block text-sm font-medium text-gray-700">Color:<strong>*</strong></label>
+                    <label for="color" class="block text-sm font-medium text-gray-700">Color:<strong>*</strong></label>
                     <select name="color" id="" class="form-control">
                             <option value="red">Rojo</option>
                             <option value="green" selected>Verde</option>
                             <option value="blue">Azul</option>
-                    </select> --}}
-                    
-                    {!! Form::label('color', 'Color') !!}
-                    {!! Form::select('color', $colors, null, ['class' => 'form-control']) !!}
+                    </select>
 
                     @error('color')
                             <span clas="text-danger">{{menssage}} </span>
