@@ -29,7 +29,6 @@ Route::group(['prefix' => 'blog', 'as' => 'blg.'], function () {
     // Route::put('categories/{category}', [\Modules\Blog\Http\Controllers\CategoryController::class, 'update'])->name('categories.update');
     // Route::get('categories/{category}/edit', [\Modules\Blog\Http\Controllers\CategoryController::class, 'edit'])->name('categories.edit');
     // Route::delete('categories/{category}/delete', [\Modules\Blog\Http\Controllers\CategoryController::class, 'destroy'])->name('categories.destroy');
-
     Route::resource('/categories', 'CategoryController');
 
     //RUTAS DE TAGS
