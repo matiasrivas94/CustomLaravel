@@ -12,12 +12,31 @@
 @stop
 
 @section('content')
+
     <h1>PRIMER PROYECTO:</h1>
     <h3>
         <i class="fab fa-laravel text-gray-900">Sistema de blog autoadministrable en Laravel 10</i>
         <i class="fab fa-laravel"></i>
     </h3>
-        
+
+    <br>
+
+    <h1>SEGUNDO PROYECTO:</h1>
+    <h3>
+        <i class="fas fa-users text-gray-900">Sistema de Roles y Permisos</i>
+    </h3>
+    <h5>
+        <i class="fas fa-box text-gray-900">Paquete SPATIE</i>
+    </h5>
+
+    <br>
+
+    <h1>ADICIONAL:</h1>
+    <h3>
+        <i class="fas fa-sign-in-alt text-gray-900">Sistema de autenticación de usuarios(LOGIN)</i><br>
+        <i class="fas fa-box text-gray-900">Paquete de traducción al español</i>
+    </h3>
+
 @stop
 
 @section('css')

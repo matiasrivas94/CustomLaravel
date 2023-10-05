@@ -53,8 +53,8 @@ class LoginRegisterController extends Controller
         $credentials = $request->only('email', 'password');
         Auth::attempt($credentials);
         $request->session()->regenerate();
-        return redirect()->route('dashboard')
-        ->withSuccess('Te has registrado e iniciado sesión con éxito!');
+        return redirect()->route('admin.home')
+            ->withSuccess('Te has registrado e iniciado sesión con éxito!');
     }
 
     /**

@@ -16,23 +16,29 @@ class RoleSeeder extends Seeder
         $roleAdmin      = Role::create(['name' => 'Admin']);
         $roleBlogger    = Role::create(['name' => 'Blogger']);
 
-        Permission::create(['name' => 'posts.index']);
-        Permission::create(['name' => 'posts.create']);
-        Permission::create(['name' => 'posts.show']);
-        Permission::create(['name' => 'posts.edit']);
-        Permission::create(['name' => 'posts.destroy']);
+        Permission::create(['name' => 'admin.home'])->syncRoles([$roleAdmin, $roleAdmin]);
 
-        Permission::create(['name' => 'categories.index']);
-        Permission::create(['name' => 'categories.create']);
-        Permission::create(['name' => 'categories.show']);
-        Permission::create(['name' => 'categories.edit']);
-        Permission::create(['name' => 'categories.destroy']);
+        Permission::create(['name' => 'admin.users.index'])->syncRoles([$roleAdmin]);
+        Permission::create(['name' => 'admin.users.edit'])->syncRoles([$roleAdmin]);
+        Permission::create(['name' => 'admin.users.update'])->syncRoles([$roleAdmin]);
 
-        Permission::create(['name' => 'tags.index']);
-        Permission::create(['name' => 'tags.create']);
-        Permission::create(['name' => 'tags.show']);
-        Permission::create(['name' => 'tags.edit']);
-        Permission::create(['name' => 'tags.destroy']);
+        Permission::create(['name' => 'posts.index'])->syncRoles([$roleBlogger]);
+        Permission::create(['name' => 'posts.create'])->syncRoles([$roleBlogger]);
+        Permission::create(['name' => 'posts.show'])->syncRoles([$roleBlogger]);
+        Permission::create(['name' => 'posts.edit'])->syncRoles([$roleBlogger]);
+        Permission::create(['name' => 'posts.destroy'])->syncRoles([$roleBlogger]);
+
+        Permission::create(['name' => 'categories.index'])->syncRoles([$roleAdmin]);
+        Permission::create(['name' => 'categories.create'])->syncRoles([$roleAdmin]);
+        Permission::create(['name' => 'categories.show'])->syncRoles([$roleAdmin]);
+        Permission::create(['name' => 'categories.edit'])->syncRoles([$roleAdmin]);
+        Permission::create(['name' => 'categories.destroy'])->syncRoles([$roleAdmin]);
+
+        Permission::create(['name' => 'tags.index'])->syncRoles([$roleAdmin]);
+        Permission::create(['name' => 'tags.create'])->syncRoles([$roleAdmin]);
+        Permission::create(['name' => 'tags.show'])->syncRoles([$roleAdmin]);
+        Permission::create(['name' => 'tags.edit'])->syncRoles([$roleAdmin]);
+        Permission::create(['name' => 'tags.destroy'])->syncRoles([$roleAdmin]);
     }
     //php artisan db:seed --class=RoleSeeder
 }
