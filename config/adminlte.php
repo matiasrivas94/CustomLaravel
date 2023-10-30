@@ -299,18 +299,25 @@ return [
         
         [
             'text'        => 'PRINCIPAL',
-            //'url'         => 'admin',
-            'route'         => 'admin.home',
+            'route'       => 'admin.home',
             'icon'        => 'fas fa-home',
             'icon_color'  => 'blue'
         ],
 
         ['header' => 'Users'],
         [
-            'text'          => 'Roles&Permisos',
+            'text'          => 'Usuarios',
             'route'         => 'admin.users.index',
             'icon'          => 'fas fa-users',
-            'icon_color'    => 'gray'
+            'icon_color'    => 'gray',
+            'can'           => 'admin.users.index'
+        ],
+        [
+            'text'          => 'Lista de Roles',
+            'route'         => 'admin.roles.index',
+            'icon'          => 'fas fa-user-tag',
+            'icon_color'    => 'gray',
+            //'can'           => 'admin.users.index'
         ],
 
         ['header' => 'Laravel 10'],
@@ -323,7 +330,7 @@ return [
                     'text'          => 'Posts',
                     'route'         => 'blg.posts.index',
                     'active'        => ['blog/posts*'],
-                    //'can'           =>  'blog.admin.posts', //PERMISOS
+                    'can'           => 'posts.index',
                     'icon'          => 'far fa-sticky-note',
                     'icon_color'    => 'white',
                 ],
@@ -331,7 +338,7 @@ return [
                     'text'          => 'Categories',
                     'route'         => 'blg.categories.index',
                     'active'        => ['blog/categories*'],
-                    //'can'           =>  'blog.admin.categories', //PERMISOS
+                    'can'           => 'categories.index',
                     'icon'          => 'fab fa-fw fa-buffer',
                     'icon_color'    => 'white',
                 ],
@@ -339,7 +346,7 @@ return [
                     'text'          => 'Tags',
                     'route'         => 'blg.tags.index',
                     'active'        => ['blog/tags*'],
-                    //'can'           =>  'blog.admin.tags', //PERMISOS
+                    'can'           => 'tags.index',
                     'icon'          => 'fas fa-tag',
                     'icon_color'    => 'white',
                 ]

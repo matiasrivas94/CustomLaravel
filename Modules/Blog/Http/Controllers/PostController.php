@@ -15,8 +15,10 @@ class PostController extends Controller
 
     public function __construct()
     {
-        //$this->middleware('auth');
-        //$this->middleware('can:blg.posts.index')->only('index');
+        $this->middleware('can:posts.index')->only('index');
+        $this->middleware('can:posts.show')->only('show');
+        $this->middleware('can:posts.create')->only('create', 'store');
+        $this->middleware('can:posts.edit')->only('edit', 'update');
     }
 
      /**
