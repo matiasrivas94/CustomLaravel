@@ -317,7 +317,7 @@ return [
             'route'         => 'admin.roles.index',
             'icon'          => 'fas fa-user-tag',
             'icon_color'    => 'gray',
-            //'can'           => 'admin.users.index'
+            //'can'           => 'admin.roles.index'
         ],
 
         ['header' => 'Laravel 10'],

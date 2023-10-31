@@ -16,19 +16,18 @@
     <h1>PRIMER PROYECTO:</h1>
     <h3>
         <i class="fab fa-laravel text-gray-900">Sistema de blog autoadministrable en Laravel 10</i>
-        <i class="fab fa-laravel"></i>
+        <i class="fab fa-laravel"></i> <br>
+        <i class="fas fa-box text-gray-900">Laravel-AdminLTE</i>
     </h3>
 
     <br>
 
     <h1>SEGUNDO PROYECTO:</h1>
     <h3>
-        <i class="fas fa-users text-gray-900">Sistema de Roles y Permisos</i>
-    </h3>
-    <h5>
+        <i class="fas fa-users text-gray-900">Sistema de Roles y Permisos</i> 
+        <i class="fas fa-users text-gray-900"></i><br>
         <i class="fas fa-box text-gray-900">Paquete SPATIE</i>
-    </h5>
-
+    </h3>
     <br>
 
     <h1>ADICIONAL:</h1>
