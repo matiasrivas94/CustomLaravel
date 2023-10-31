@@ -92,6 +92,6 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect()->route('blog::categories.index')
-                ->with('success', 'Categoria Eliminada.');;
+                ->with('success', 'Categoria Eliminada.');
     }
 }
