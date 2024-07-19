@@ -3,6 +3,7 @@
 namespace Modules\People\Database\factories;
 
 use App\Utils\FormData;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PeopleFactory extends Factory
@@ -40,7 +41,8 @@ class PeopleFactory extends Factory
             'fecha_ingreso' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'estado_civil' => $this->faker->randomElement(FormData::$estadosCiviles),
             'observaciones' => $this->faker->randomElement([null, ($this->faker->words(random_int(5, 10), true))]),
-            'grupo_sanguineo' => $this->faker->randomElement(FormData::$gruposSanguineos)
+            'grupo_sanguineo' => $this->faker->randomElement(FormData::$gruposSanguineos),
+            'updated_by_user_id' => User::all()->random()->id
         ];
     }
 }

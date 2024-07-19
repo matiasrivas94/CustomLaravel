@@ -30,6 +30,8 @@ return new class extends Migration
             $table->text('observaciones')->nullable();
             $table->string('grupo_sanguineo', '20')->nullable();
 
+            $table->foreignId('updated_by_user_id')->constrained('users');
+
             $table->timestamps();
         });
     }
