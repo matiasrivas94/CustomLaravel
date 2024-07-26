@@ -353,20 +353,20 @@ return [
             ]
         ],
 
-        ['header' => 'Vue 3'],
-        [
-            'text'          => 'Vuejs',
-            'icon'          => 'fab fa-vuejs',
-            'icon_color'    => 'green',
-            'submenu'       => [
-                [
-                    'text'          => 'CRUD',
-                    'url'           => '#',
-                    'icon'          => '',
-                    'icon_color'    => 'white',
-                ],
-            ],
-        ],
+        // ['header' => 'Vue 3'],
+        // [
+        //     'text'          => 'Vuejs',
+        //     'icon'          => 'fab fa-vuejs',
+        //     'icon_color'    => 'green',
+        //     'submenu'       => [
+        //         [
+        //             'text'          => 'CRUD',
+        //             'url'           => '#',
+        //             'icon'          => '',
+        //             'icon_color'    => 'white',
+        //         ],
+        //     ],
+        // ],
     ],
 
     /*
