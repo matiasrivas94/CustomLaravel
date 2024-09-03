@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('people')->group(function() {
-    Route::get('/', 'PeopleController@index');
-});
+// Route::prefix('people')->group(function() {
+//     Route::get('/', 'PeopleController@index');
+// });
