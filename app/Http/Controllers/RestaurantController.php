@@ -5,15 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Restaurant;
 use App\Http\Requests\StoreRestaurantRequest;
 use App\Http\Requests\UpdateRestaurantRequest;
+use App\Http\Resources\RestaurantResource;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Gate;
 
 class RestaurantController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        $restaurants = auth()->user()->restaurants()->get();
+        return jsonResponse([
+            'restaurants' => RestaurantResource::collection($restaurants)
+        ]);
     }
 
     /**
@@ -21,15 +25,11 @@ class RestaurantController extends Controller
      */
     public function store(StoreRestaurantRequest $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Restaurant $restaurant)
-    {
-        //
+        //$restaurant = Restaurant::create($request->validate());
+        $restaurant = auth()->user()->restaurants()->create($request->validate());
+        return jsonResponse(data:[
+            'restaurant' => RestaurantResource::make($restaurant),
+        ]);
     }
 
     /**
@@ -37,7 +37,11 @@ class RestaurantController extends Controller
      */
     public function update(UpdateRestaurantRequest $request, Restaurant $restaurant)
     {
-        //
+        Gate::authorize('update',$restaurant);
+        $restaurant->update($request->validate());
+        return jsonResponse(data:[
+            'restaurant' => RestaurantResource::make($restaurant),
+        ]);
     }
 
     /**
@@ -45,6 +49,8 @@ class RestaurantController extends Controller
      */
     public function destroy(Restaurant $restaurant)
     {
-        //
+        Gate::authorize('delete',$restaurant);
+        $restaurant->delete();
+        return jsonResponse();
     }
 }
