@@ -11,7 +11,7 @@ class UpdateRestaurantRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -22,7 +22,9 @@ class UpdateRestaurantRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name'        => 'required',
+            'slug'        => 'required | unique:restaurants,slug,'.$this->restaurant->id,
+            'description' => 'required',
         ];
     }
 }
